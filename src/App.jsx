@@ -14,6 +14,7 @@ function App() {
     return base + 'bg-zinc-300 text-black';
   };
 
+
   const buttons = [
     'AC', '+/-', '%', '÷',
      '7', '8', '9', 'x',
@@ -21,6 +22,15 @@ function App() {
      '0', '.', '='
   ];
 
+  const handleNumber = (digit) => {
+    if (waitingForNextValue) {
+      setCurrentValue(digit);
+      setWaitingForNextValue(false);
+    } else {
+      setCurrentValue(currentValue === '0' ? digit : currentValue + digit);
+    }
+  };
+  
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-[320px] bg-black overflow-hidden shadow-2xl rounded-3xl">
