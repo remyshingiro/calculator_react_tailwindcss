@@ -30,6 +30,21 @@ function App() {
       setCurrentValue(currentValue === '0' ? digit : currentValue + digit);
     }
   };
+
+  const handleOperator = (nextOperator) => {
+    const inputValue = parseFloat(currentValue);
+
+    if (previousValue === null) {
+      setPreviousValue(inputValue);
+    } else if (operator) {
+      const result = performCalculation(previousValue, inputValue, operator);
+      setCurrentValue(String(result));
+      setPreviousValue(result);
+    }
+    setWaitingForNextValue(true);
+    setOperator(nextOperator);
+  };
+
   
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">
