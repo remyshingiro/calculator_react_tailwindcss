@@ -18,4 +18,12 @@ function App() {
      '0', '.', '='
   ];
 
+  return (
+    <div className="flex h-screen items-center justify-center bg-gray-100">
+      <div className="w-full max-w-[320px] bg-black overflow-hidden shadow-2xl rounded-3xl">
+        
+
+      </div>
+    </div>
+  )
 }
