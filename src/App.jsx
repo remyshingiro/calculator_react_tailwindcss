@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 
 function App() {
-  const [display, setDisplay] = useState('0');
+  const [currentValue, setCurrentValue] = ('0');
+  const [previousValue, setPreviousValue] = useState(null);
+  const [operator, setOperator] = useState(null);
+  const [waitingForNextValue, setWaitingForNextValue] = useState(false);
 
   const getBtnStyle = (btn) => {
     const base = 'h-20 text-2xl font-medium transition-all active:brightness-125';
