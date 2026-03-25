@@ -59,13 +59,19 @@ function App() {
 
         <div className="grid grid-cols-4 gap-[1px] bg-zinc-800">
           {buttons.map((btn) => (
-            <button 
+            <button
               key={btn}
-              className="{`${getBtnStyle(btn)} ${btn === '0' ? 'col-span-2' : ''}`} "
+              className={`${getBtnStyle(btn)} ${btn === "0" ? "col-span-2" : ""}`}
+              onClick={() => {
+                if (!isNaN(btn) || btn === ".") handleNumber(btn);
+                else if (["+", "-", "x", "÷"].includes(btn)) handleOperator(btn);
+                else if (btn === "=") handleEqual();
+                else if (btn === "AC") handleClear();
+              }}
             >
               {btn}
             </button>
-          ))}
+            ))}
         </div>
 
       </div>
