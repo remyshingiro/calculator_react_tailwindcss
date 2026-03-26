@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 function App() {
-  const [currentValue, setCurrentValue] = ('0');
+  const [currentValue, setCurrentValue] = useState('0');
   const [previousValue, setPreviousValue] = useState(null);
   const [operator, setOperator] = useState(null);
   const [waitingForNextValue, setWaitingForNextValue] = useState(false);
@@ -52,7 +52,7 @@ function App() {
 
         <div className="flex items-end justify-end px-6 py-8 h-32">
           <span className="text-white text-6xl font-light tracking-tight">
-            {display}
+            {currentValue}
 
           </span>
         </div>
