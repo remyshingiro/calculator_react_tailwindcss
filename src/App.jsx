@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { performCalculation } from "./calculatorLogic";
 
 function App() {
   const [currentValue, setCurrentValue] = useState('0');
@@ -46,6 +47,23 @@ function App() {
     setOperator(nextOperator);
   };
 
+    const handleClear = () => {
+      setCurrentValue('0');
+      setPreviousValue(null);
+      setOperator(null);
+      setWaitingForNextValue(false);
+    };
+
+    const handleEqual = () => {
+      if (!operator || previousValue === null) return;
+
+      const result = performCalculation(previousValue, currentValue, operator);
+
+      setCurrentValue(String(result));
+      setPreviousValue(null);
+      setOperator(null);
+      setWaitingForNextValue(true);
+    }
   
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">

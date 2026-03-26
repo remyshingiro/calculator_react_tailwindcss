@@ -1,7 +1,7 @@
-export const perfomCalculation = (n1, n2, op) => {
+export const performCalculation = (n1, n2, op) => {
 
     const num1 = parseFloat(n1);
-    const num2 = parseFloat(num2);
+    const num2 = parseFloat(n2);
     switch (op) {
         case '+': return num1 + num2;
         case '-': return num1 - num2;
