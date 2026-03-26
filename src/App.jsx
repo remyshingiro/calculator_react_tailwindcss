@@ -76,7 +76,7 @@ function App() {
           </span>
         </div>
 
-        <div className="grid grid-cols-4 gap-[1px] bg-zinc-800">
+        <div className="grid grid-cols-4 gap-1px bg-zinc-800">
           {buttons.map((btn) => (
             <button
               key={btn}
